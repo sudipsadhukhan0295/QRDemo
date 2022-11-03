@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -103,12 +104,12 @@ class MainActivity : AppCompatActivity() {
             // Preview
             preview = Preview.Builder()
                 .setTargetAspectRatio(AspectRatio.RATIO_4_3)
-                // Set initial target rotation
                 .setTargetRotation(rotation)
                 .build()
-            var showNoInternetMessage = false
             // ImageAnalysis
             val analyser = QrAnalyser { value ->
+                //TODO: Get the data here
+                Toast.makeText(this@MainActivity,value.toString(),Toast.LENGTH_SHORT).show()
 
 
             }
